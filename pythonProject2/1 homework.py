@@ -18,7 +18,7 @@ class ConvertWidget(QWidget):
         self.input_value.setSizePolicy(QSizePolicy.Expanding, QSizePolicy.Expanding)
         #
         self.convert_button = QPushButton(self)
-        self.convert_button.setText('rewr')
+        self.convert_button.setText('->')
         self.convert_button.clicked.connect(self.convert)
 
         self.output_value = QLineEdit(self)
@@ -35,8 +35,18 @@ class ConvertWidget(QWidget):
         self.setLayout(self.main_layout)
 
     def convert(self):
-        output = self.input_value
-        self.output_value.setText(self.input_value)
+        output = self.convert_button.text()
+        if output == '->':
+            inp = self.input_value.text()
+            self.output_value.setText(inp)
+            self.input_value.setText('')
+            self.convert_button.setText('<-')
+
+        else:
+            impu = self.output_value.text()
+            self.input_value.setText(impu)
+            self.output_value.setText('')
+            self.convert_button.setText('->')
 
 
 if __name__ == '__main__':
