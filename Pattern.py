@@ -7,7 +7,7 @@ from PyQt5.QtWidgets import QWidget, QApplication, QLineEdit, QComboBox, QPushBu
 class ConvertWidget(QWidget):
     def __init__(self):
         super(ConvertWidget, self).__init__()
-        self.setWindowTitle('Миникалькулятор')
+        self.setWindowTitle('')
 
 
 if __name__ == '__main__':
